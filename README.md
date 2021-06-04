@@ -19,3 +19,6 @@ Coordinators
 Dependency Injection
 
 Repository pattern
+
+The Movie Database API
+- https://api.themoviedb.org/3
