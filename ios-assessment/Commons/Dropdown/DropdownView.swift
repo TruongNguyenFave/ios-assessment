@@ -28,7 +28,7 @@ class DropdownView: UIView {
     var titleSelected: String = ""
     var items: [DropdownItem] = []
     var didTapItem: ((DropdownItem) -> Void)?
-    var didHideItem: (()->Void)?
+    var didHideItem: (() -> Void)?
     var marginYwithDropDownView: CGFloat = 6
     var isShowHeader: Bool = false
     var textOfHeader: String = ""
@@ -145,7 +145,9 @@ extension DropdownView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: Defines.heightOfHeader))
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0,
+                                                        width: tableView.frame.width,
+                                                        height: Defines.heightOfHeader))
 
         let label = UILabel()
         label.frame = CGRect.init(x: 10, y: 0, width: headerView.frame.width, height: Defines.heightOfHeader)

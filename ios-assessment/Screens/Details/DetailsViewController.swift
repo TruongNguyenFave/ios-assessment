@@ -36,26 +36,20 @@ class DetailsViewController: UIViewController, Bindable {
     }
 
     func setupCellConfiguration() {
-        tableView.register(UINib(nibName: MovieCell.className, bundle: nil), forCellReuseIdentifier: MovieCell.className)
-        tableView.register(UINib(nibName: MovieAdditionalCell.className, bundle: nil), forCellReuseIdentifier: MovieAdditionalCell.className)
+        tableView.registerNib(cellName: MovieCell.className)
+        tableView.registerNib(cellName: MovieAdditionalCell.className)
 
-        dataRelay.bind(to: tableView.rx.items){ (tableView, row, type) -> UITableViewCell in
+        dataRelay.bind(to: tableView.rx.items) { (tableView, row, type) -> UITableViewCell in
             let indexPath = IndexPath(row: row, section: 0)
             switch type {
             case .movie:
-                if  let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.className, for: indexPath) as? MovieCell {
-                    cell.movie = self.viewModel.movie
-                    return cell
-                } else {
-                    return UITableViewCell()
-                }
+                let cell = tableView.dequeueReusableCell(withClass: MovieCell.self, for: indexPath)
+                cell.movie = self.viewModel.movie
+                return cell
             case .addtional:
-                if  let cell = tableView.dequeueReusableCell(withIdentifier: MovieAdditionalCell.className, for: indexPath) as? MovieAdditionalCell {
-                    cell.movie = self.viewModel.movie
-                    return cell
-                } else {
-                    return UITableViewCell()
-                }
+                let cell = tableView.dequeueReusableCell(withClass: MovieAdditionalCell.self, for: indexPath)
+                cell.movie = self.viewModel.movie
+                return cell
             }
         }.disposed(by: bag)
 
@@ -63,8 +57,16 @@ class DetailsViewController: UIViewController, Bindable {
 
 }
 
+// MARK: View Model Output
 extension DetailsViewController: DetailsViewModelOutput {
     func getDetailsSuccess() {
         dataRelay.accept([.movie, .addtional])
+    }
+}
+
+// MARK: Actions
+extension DetailsViewController {
+    @IBAction fileprivate func bookMovieAction(_ sender: Any) {
+        coordinator.bookTheVideo()
     }
 }

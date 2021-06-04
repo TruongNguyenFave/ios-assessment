@@ -15,6 +15,7 @@ PODS:
   - SDWebImage (5.11.0):
     - SDWebImage/Core (= 5.11.0)
   - SDWebImage/Core (5.11.0)
+  - SwiftLint (0.43.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SDWebImage
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
@@ -33,6 +35,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SDWebImage
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
@@ -42,7 +45,8 @@ SPEC CHECKSUMS:
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: 05af29017e0c6fbd5fa2d04b3349f9f2f9925f88
+PODFILE CHECKSUM: c874c4b88b3788f88656d72c844438e97c3b3e2a
 
 COCOAPODS: 1.10.1

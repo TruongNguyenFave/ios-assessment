@@ -10,6 +10,6 @@ target 'ios-assessment' do
   pod 'Alamofire'
   pod 'RxAlamofire'
   pod 'SDWebImage'
+  pod 'SwiftLint'
   # Pods for ios-assessment
-
 end

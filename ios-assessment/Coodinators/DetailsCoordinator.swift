@@ -19,10 +19,24 @@ class DetailsCoordinator: Coordinator {
     }
 
     func start() {
-        let homeViewController = DetailsViewController.loadFromStoryboard() as! DetailsViewController
-        let detailsModel = DetailsViewModel(self.movie)
-        homeViewController.bindViewModelAndCoordinator(model: detailsModel, andCoordinator: self)
-        navigator.pushViewController(homeViewController, animated: true)
+        if let homeViewController = DetailsViewController.loadFromStoryboard() as? DetailsViewController {
+            let detailsModel = DetailsViewModel(self.movie)
+            homeViewController.bindViewModelAndCoordinator(model: detailsModel, andCoordinator: self)
+            navigator.pushViewController(homeViewController, animated: true)
+        }
+    }
+
+    func bookTheVideo() {
+        if let url = URL.init(string: AppDefines.bookingPath) {
+            openExternalApp(url)
+        }
+    }
+
+    fileprivate func openExternalApp(_ url: URL) {
+        guard UIApplication.shared.canOpenURL(url) else {
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
 }

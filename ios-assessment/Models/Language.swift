@@ -22,6 +22,6 @@ extension Language: Mappable {
     }
 
     mutating func mapping(map: Map) {
-        name <- map["name"]
+        name <- map["english_name"]
     }
 }

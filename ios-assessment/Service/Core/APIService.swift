@@ -26,8 +26,8 @@ final class APIService: APIServiceType {
     func request<T: Mappable>(_ input: APIBaseInput) -> Observable<T> {
         return request(input)
             .map { json -> T in
-                if let t = T(JSON: json) {
-                    return t
+                if let output = T(JSON: json) {
+                    return output
                 }
                 throw APIResponseError.invalidResponseData
         }
@@ -66,7 +66,6 @@ extension APIService {
 
         return urlRequest
     }
-
 
     fileprivate func process(_ response: (HTTPURLResponse, Data), url: URL?) throws -> JSONDictionary {
         let (response, data) = response

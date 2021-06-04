@@ -17,10 +17,11 @@ class HomeCoordinator: Coordinator {
     }
 
     func start() {
-        let homeViewController = HomeViewController.loadFromStoryboard() as! HomeViewController
-        let homeModel = HomeViewModel()
-        homeViewController.bindViewModelAndCoordinator(model: homeModel, andCoordinator: self)
-        navigator.pushViewController(homeViewController, animated: true)
+        if let homeViewController = HomeViewController.loadFromStoryboard() as? HomeViewController {
+            let homeModel = HomeViewModel()
+            homeViewController.bindViewModelAndCoordinator(model: homeModel, andCoordinator: self)
+            navigator.pushViewController(homeViewController, animated: true)
+        }
     }
 
     func didTapMovie(_ movie: Movie) {
@@ -29,4 +30,3 @@ class HomeCoordinator: Coordinator {
     }
 
 }
-

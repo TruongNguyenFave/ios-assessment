@@ -43,6 +43,8 @@
 		655D8E732669D8FF00170884 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D8E722669D8FF00170884 /* UITableView+Extensions.swift */; };
 		655D8E762669DC9600170884 /* MovieSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D8E752669DC9600170884 /* MovieSort.swift */; };
 		655D8E832669E6A500170884 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 655D8E822669E6A500170884 /* .gitignore */; };
+		655D8E91266A051200170884 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 655D8E90266A051200170884 /* .swiftlint.yml */; };
+		655D8EAD266A09F100170884 /* AppDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655D8EAC266A09F100170884 /* AppDefines.swift */; };
 		6599ACAD26678C9100382DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599ACAC26678C9100382DF7 /* AppDelegate.swift */; };
 		6599ACAF26678C9100382DF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599ACAE26678C9100382DF7 /* SceneDelegate.swift */; };
 		6599ACB126678C9100382DF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6599ACB026678C9100382DF7 /* ViewController.swift */; };
@@ -95,6 +97,8 @@
 		655D8E722669D8FF00170884 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		655D8E752669DC9600170884 /* MovieSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSort.swift; sourceTree = "<group>"; };
 		655D8E822669E6A500170884 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		655D8E90266A051200170884 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		655D8EAC266A09F100170884 /* AppDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefines.swift; sourceTree = "<group>"; };
 		6599ACA926678C9100382DF7 /* ios-assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6599ACAC26678C9100382DF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6599ACAE26678C9100382DF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,9 +217,18 @@
 			path = Dropdown;
 			sourceTree = "<group>";
 		};
+		655D8EAB266A09D900170884 /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				655D8EAC266A09F100170884 /* AppDefines.swift */,
+			);
+			path = Defines;
+			sourceTree = "<group>";
+		};
 		6599ACA026678C9100382DF7 = {
 			isa = PBXGroup;
 			children = (
+				655D8E90266A051200170884 /* .swiftlint.yml */,
 				655D8E822669E6A500170884 /* .gitignore */,
 				6599ACAB26678C9100382DF7 /* ios-assessment */,
 				6599ACAA26678C9100382DF7 /* Products */,
@@ -235,6 +248,7 @@
 		6599ACAB26678C9100382DF7 /* ios-assessment */ = {
 			isa = PBXGroup;
 			children = (
+				655D8EAB266A09D900170884 /* Defines */,
 				655D8E622669D7B100170884 /* Commons */,
 				6599ACCA26678D7700382DF7 /* Extensions */,
 				6599ACC926678D5F00382DF7 /* Screens */,
@@ -351,6 +365,7 @@
 				6599ACA626678C9100382DF7 /* Frameworks */,
 				6599ACA726678C9100382DF7 /* Resources */,
 				A23A4CC86521FE79B3D16784 /* [CP] Embed Pods Frameworks */,
+				655D8EA9266A071100170884 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -398,6 +413,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655D8E91266A051200170884 /* .swiftlint.yml in Resources */,
 				6536DA602668E7A900A8B5F9 /* DetailsViewController.storyboard in Resources */,
 				6536D9FC26687CAC00A8B5F9 /* HomeViewController.storyboard in Resources */,
 				6599ACB926678C9300382DF7 /* LaunchScreen.storyboard in Resources */,
@@ -415,6 +431,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		655D8EA9266A071100170884 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		95C7E88526A5191B11BFE29F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,6 +500,7 @@
 				655D8E5C2669CFFE00170884 /* Language.swift in Sources */,
 				6536DA052668800700A8B5F9 /* Movie.swift in Sources */,
 				6536DA462668CBBC00A8B5F9 /* API_Movie.swift in Sources */,
+				655D8EAD266A09F100170884 /* AppDefines.swift in Sources */,
 				6536D9FF26687CC100A8B5F9 /* UIViewController+Extensions.swift in Sources */,
 				6536DA3C2668C86E00A8B5F9 /* APIResponseError.swift in Sources */,
 				6599ACCC26678F9900382DF7 /* Coordinator.swift in Sources */,

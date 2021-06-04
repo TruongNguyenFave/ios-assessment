@@ -20,8 +20,7 @@ class MovieAdditionalCell: UITableViewCell {
             genresLabel.text = movie.genresDisplay
             languageLabel.text = movie.movieLanguage
             synopsisLabel.text = movie.overview
-            // TODOs:
-            durationLabel.text = "Duration: -"
+            durationLabel.text = movie.durationDisplay
         }
     }
 
@@ -29,18 +28,4 @@ class MovieAdditionalCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    @IBAction fileprivate func bookMovieAction(_ sender: Any) {
-        if let url = URL.init(string: "https://www.cathaycineplexes.com.sg/") {
-            openExternalApp(url)
-        }
-    }
-
-    func openExternalApp(_ url: URL) {
-        guard UIApplication.shared.canOpenURL(url) else {
-            return
-        }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    }
-    
 }

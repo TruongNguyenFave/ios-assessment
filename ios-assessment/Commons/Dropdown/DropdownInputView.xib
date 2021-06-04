@@ -23,16 +23,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="460" height="90"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5y-Rp-vzc">
-                            <rect key="frame" x="10" y="0.0" width="400" height="90"/>
+                            <rect key="frame" x="10" y="0.0" width="410" height="90"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71Q-MD-5jc">
-                            <rect key="frame" x="420" y="0.0" width="40" height="90"/>
+                            <rect key="frame" x="430" y="0.0" width="20" height="90"/>
                             <subviews>
                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4l-ux-F1v">
-                                    <rect key="frame" x="10" y="35.5" width="20" height="19.5"/>
+                                    <rect key="frame" x="0.0" y="35.5" width="20" height="19.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" image="arrowtriangle.down.fill" catalog="system"/>
@@ -41,7 +41,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="S4l-ux-F1v" firstAttribute="centerX" secondItem="71Q-MD-5jc" secondAttribute="centerX" id="ED3-Xj-xZV"/>
-                                <constraint firstAttribute="width" constant="40" id="USe-da-YBe"/>
+                                <constraint firstAttribute="width" constant="20" id="USe-da-YBe"/>
                                 <constraint firstItem="S4l-ux-F1v" firstAttribute="centerY" secondItem="71Q-MD-5jc" secondAttribute="centerY" id="eO1-eN-4wo"/>
                             </constraints>
                         </view>
@@ -59,7 +59,7 @@
                         <constraint firstItem="mqm-kn-Irj" firstAttribute="leading" secondItem="mxX-Ox-BmZ" secondAttribute="leading" id="4CF-Kj-rz8"/>
                         <constraint firstAttribute="bottom" secondItem="G5y-Rp-vzc" secondAttribute="bottom" id="56l-Bq-4tc"/>
                         <constraint firstAttribute="bottom" secondItem="71Q-MD-5jc" secondAttribute="bottom" id="E40-4A-n5b"/>
-                        <constraint firstAttribute="trailing" secondItem="71Q-MD-5jc" secondAttribute="trailing" id="EBf-Jd-Fny"/>
+                        <constraint firstAttribute="trailing" secondItem="71Q-MD-5jc" secondAttribute="trailing" constant="10" id="EBf-Jd-Fny"/>
                         <constraint firstItem="mqm-kn-Irj" firstAttribute="top" secondItem="mxX-Ox-BmZ" secondAttribute="top" id="RzS-I8-zRU"/>
                         <constraint firstAttribute="trailing" secondItem="mqm-kn-Irj" secondAttribute="trailing" id="VYi-Q4-xFy"/>
                         <constraint firstItem="G5y-Rp-vzc" firstAttribute="top" secondItem="mxX-Ox-BmZ" secondAttribute="top" id="cv8-JC-edY"/>

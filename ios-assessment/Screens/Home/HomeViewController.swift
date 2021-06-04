@@ -14,7 +14,6 @@ class HomeViewController: UIViewController, Bindable {
     var viewModel: HomeViewModel!
     var coordinator: HomeCoordinator!
 
-
     @IBOutlet fileprivate weak var tableView: UITableView!
 
     // Dropdown
@@ -37,11 +36,11 @@ class HomeViewController: UIViewController, Bindable {
     }
 
     func setupCellConfiguration() {
-        tableView.register(UINib(nibName: MovieCell.className, bundle: nil), forCellReuseIdentifier: MovieCell.className)
+        tableView.registerNib(cellName: MovieCell.className)
         tableView.refreshControl = UIRefreshControl()
 
-        dataRelay.bind(to: tableView.rx.items(cellIdentifier: MovieCell.className, cellType: MovieCell.self)) {
-            row, movie, cell in
+        dataRelay.bind(to: tableView.rx.items(cellIdentifier: MovieCell.className,
+                                              cellType: MovieCell.self)) { (_, movie, cell) in
             cell.movie = movie
         }.disposed(by: bag)
 

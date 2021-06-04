@@ -12,8 +12,8 @@ protocol Bindable: class {
     associatedtype ViewModel
     associatedtype Coordinator
 
-    var viewModel: ViewModel! { set get }
-    var coordinator: Coordinator! { set get }
+    var viewModel: ViewModel! { get set }
+    var coordinator: Coordinator! { get set }
 
     func bindViewModelAndCoordinator()
 

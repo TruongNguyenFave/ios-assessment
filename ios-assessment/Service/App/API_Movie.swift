@@ -23,8 +23,8 @@ extension APIService {
 class MovieInput: APIBaseInput {
     init(with page: Int, and sortBy: String) {
         let params:  [String : Any] = [
-            "api_key": "328c283cd27bd1877d9080ccb1604c91",
-            "primary_release_date.lte": "2016-12-31",
+            "api_key": AppDefines.apiKey,
+            "primary_release_date.lte": AppDefines.releaseDate,
             "sort_by": sortBy,
             "page": page
         ]
@@ -51,7 +51,7 @@ class MovieOutput: APIBaseOutput {
 class MovieDetailsInput: APIBaseInput {
     init(movieId: Int) {
         let params:  [String : Any] = [
-            "api_key": "328c283cd27bd1877d9080ccb1604c91",
+            "api_key": AppDefines.apiKey
         ]
         let urlString = String(format: APIURL.movieDetails, movieId)
         super.init(urlString: urlString,
@@ -71,4 +71,3 @@ class MovieDetailsOutput: APIBaseOutput {
         movie = Movie.init(JSON: map.JSON)
     }
 }
-

@@ -10,7 +10,7 @@ import ObjectMapper
 
 struct Movie {
     var id: Int
-    var originalTitle: String
+    var title: String
     var backdropPath: String
     var posterPath: String
     var popularity: Float
@@ -19,16 +19,18 @@ struct Movie {
     var overview: String
     var genres: [Genre]
     var spokenLanguages: [Language]
+    var runtime: Int
 
     init() {
         id = 0
-        originalTitle = ""
+        title = ""
         backdropPath = ""
         posterPath = ""
         popularity = 0
         overview = ""
         genres = []
         spokenLanguages = []
+        runtime = 0
     }
 }
 
@@ -39,13 +41,14 @@ extension Movie: Mappable {
 
     mutating func mapping(map: Map) {
         id <- map["id"]
-        originalTitle <- map["title"]
+        title <- map["title"]
         backdropPath <- map["backdrop_path"]
         posterPath <- map["poster_path"]
         popularity <- map["popularity"]
         overview <- map["overview"]
         genres <- map["genres"]
         spokenLanguages <- map["spoken_languages"]
+        runtime <- map["runtime"]
     }
 }
 
@@ -66,5 +69,8 @@ extension Movie {
     var movieLanguage: String {
         return "Language: " + (spokenLanguages.first?.name ?? "English")
     }
-}
 
+    var durationDisplay: String {
+        return "Duration: \(runtime) minutes"
+    }
+}

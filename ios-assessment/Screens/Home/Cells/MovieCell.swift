@@ -18,7 +18,7 @@ class MovieCell: UITableViewCell {
     var movie: Movie? {
         didSet {
             guard let movie = self.movie else { return }
-            movieTitlelabel.text = movie.originalTitle
+            movieTitlelabel.text = movie.title
             popularityLabel.text = "Popularity: \(movie.popularity)"
 
             posterImageView.image = nil
