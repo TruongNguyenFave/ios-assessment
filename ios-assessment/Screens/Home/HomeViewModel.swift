@@ -9,14 +9,14 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol HomeViewModelOuput: class {
+protocol HomeViewModelOutput: class {
     func refreshListMovie()
-    func refreshMoreMovie()
+    func getMoreMovieSuccess()
 }
 
-class HomeViewModel: ViewModel {
+class HomeViewModel: HomeViewModelType {
 
-    weak var output: HomeViewModelOuput?
+    weak var output: HomeViewModelOutput?
 
     fileprivate let repository = HomeRepository()
     let bag = DisposeBag()
@@ -65,10 +65,11 @@ class HomeViewModel: ViewModel {
 
         repository.getListMovies(with: page, and: sortItem.sortBy).subscribe(onNext: { [weak self] movies in
             self?.lastMovies = movies
-            self?.output?.refreshMoreMovie()
+            self?.output?.getMoreMovieSuccess()
             self?.isLoading = false
         }, onError: { [weak self] error in
             self?.isLoading = false
+            self?.page -= 1
             // TODOs:
             print(error)
         }).disposed(by: bag)

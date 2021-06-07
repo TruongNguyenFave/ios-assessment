@@ -7,4 +7,8 @@
 
 import UIKit
 
+protocol ViewModelOuput {
+    
+}
+
 protocol ViewModel {}

@@ -12,3 +12,8 @@ struct AppDefines {
     static let releaseDate = "2016-12-31"
     static let bookingPath = "https://www.cathaycineplexes.com.sg/"
 }
+
+struct ScreenNameDefines {
+    static let home = "Home"
+    static let details = "Details"
+}

@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-class HomeCoordinator: Coordinator {
+class HomeCoordinator: HomeCoordinatorType {
+
+    var detailsCoordinator: DetailsCoordinatorType?
 
     fileprivate let navigator: UINavigationController
 
@@ -25,8 +27,8 @@ class HomeCoordinator: Coordinator {
     }
 
     func didTapMovie(_ movie: Movie) {
-        let detailsCoordinator = DetailsCoordinator(navigator, movie: movie)
-        detailsCoordinator.start()
+        detailsCoordinator = DetailsCoordinator(navigator, movie: movie)
+        detailsCoordinator?.start()
     }
 
 }

@@ -7,12 +7,16 @@
 
 import UIKit
 
-class SceneCoordinator: Coordinator {
+protocol SceneCoordinatorType: Coordinator {
+    var homeCoordinator: HomeCoordinatorType? { get set }
+}
+
+class SceneCoordinator: SceneCoordinatorType {
 
     var window: UIWindow?
 
     // Home is root screen so need declare
-    var homeCoordinator: HomeCoordinator?
+    var homeCoordinator: HomeCoordinatorType?
     var navigationController: UINavigationController
 
     init(_ window: UIWindow?) {

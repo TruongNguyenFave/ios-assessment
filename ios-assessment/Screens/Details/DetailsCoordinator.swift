@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DetailsCoordinator: Coordinator {
+class DetailsCoordinator: DetailsCoordinatorType {
 
     fileprivate let navigator: UINavigationController
     fileprivate let movie: Movie

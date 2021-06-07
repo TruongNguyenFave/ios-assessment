@@ -12,7 +12,7 @@ protocol DetailsViewModelOutput: class {
     func getDetailsSuccess()
 }
 
-class DetailsViewModel: ViewModel {
+class DetailsViewModel: DetailsViewModelType {
 
     weak var output: DetailsViewModelOutput?
     let repository = DetailsRepository()

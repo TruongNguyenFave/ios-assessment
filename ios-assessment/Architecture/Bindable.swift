@@ -15,7 +15,7 @@ protocol Bindable: class {
     var viewModel: ViewModel! { get set }
     var coordinator: Coordinator! { get set }
 
-    func bindViewModelAndCoordinator()
+    func bindViewModelOutput()
 
 }
 
@@ -25,7 +25,7 @@ extension Bindable where Self: UIViewController {
         self.viewModel = model
         self.coordinator = coordinator
         loadViewIfNeeded()
-        bindViewModelAndCoordinator()
+        bindViewModelOutput()
     }
 
 }

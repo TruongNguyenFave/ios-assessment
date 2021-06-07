@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeViewController: UIViewController, Bindable {
+class HomeViewController: BaseViewController, Bindable {
     
     var viewModel: HomeViewModel!
     var coordinator: HomeCoordinator!
@@ -32,7 +32,7 @@ class HomeViewController: UIViewController, Bindable {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = "Home"
+        title = ScreenNameDefines.home
     }
 
     func setupCellConfiguration() {
@@ -66,20 +66,20 @@ class HomeViewController: UIViewController, Bindable {
             .disposed(by: bag)
     }
 
-    func bindViewModelAndCoordinator() {
+    func bindViewModelOutput() {
         viewModel.output = self
         viewModel.getListMovies()
     }
 
 }
 
-extension HomeViewController: HomeViewModelOuput {
+extension HomeViewController: HomeViewModelOutput {
     func refreshListMovie() {
         let movies = viewModel.movies
         dataRelay.accept(movies)
     }
 
-    func refreshMoreMovie() {
+    func getMoreMovieSuccess() {
         let movies = viewModel.lastMovies
 
         var lastData = dataRelay.value

@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class DetailsViewController: UIViewController, Bindable {
+class DetailsViewController: BaseViewController, Bindable {
 
     var viewModel: DetailsViewModel!
     var coordinator: DetailsCoordinator!
@@ -26,11 +26,11 @@ class DetailsViewController: UIViewController, Bindable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Details"
+        title = ScreenNameDefines.details
         setupCellConfiguration()
     }
 
-    func bindViewModelAndCoordinator() {
+    func bindViewModelOutput() {
         viewModel.output = self
         viewModel.getMovieDetails()
     }
