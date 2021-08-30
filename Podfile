@@ -9,6 +9,7 @@ target 'ios-assessment' do
   pod 'ObjectMapper'
   pod 'Alamofire'
   pod 'RxAlamofire'
+  pod 'RxDataSources'
   pod 'SDWebImage'
   pod 'SwiftLint'
   # Pods for ios-assessment

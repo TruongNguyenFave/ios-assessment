@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 // MARK: - IBInspectables
 extension UIView {
@@ -36,6 +37,23 @@ extension UIView {
         }
         set {
             layer.borderColor = newValue.cgColor
+        }
+    }
+}
+
+extension UIView {
+    /// Use only to dispose of subscriptions inside resuable views
+    func iosAssessmentDisposeBags() {
+        if var hasDisposeBagView = self as? HasDisposeBag {
+            hasDisposeBagView.disposeBag = DisposeBag()
+        }
+
+        let subViews = self.subviews
+
+        guard !subViews.isEmpty else { return }
+
+        for subView in subViews {
+            subView.iosAssessmentDisposeBags()
         }
     }
 }

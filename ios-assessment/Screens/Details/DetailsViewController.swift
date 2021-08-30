@@ -33,25 +33,27 @@ class DetailsViewController: BaseViewController, Bindable {
     func bindViewModelOutput() {
         viewModel.output = self
         viewModel.getMovieDetails()
+
+        viewModel.sectionsModels.asDriver().drive(tableView.rx.items(dataSource: viewModel.dataSource)).disposed(by: bag)
     }
 
     func setupCellConfiguration() {
         tableView.registerNib(cellName: MovieCell.className)
         tableView.registerNib(cellName: MovieAdditionalCell.className)
 
-        dataRelay.bind(to: tableView.rx.items) { (tableView, row, type) -> UITableViewCell in
-            let indexPath = IndexPath(row: row, section: 0)
-            switch type {
-            case .movie:
-                let cell = tableView.dequeueReusableCell(withClass: MovieCell.self, for: indexPath)
-                cell.movie = self.viewModel.movie
-                return cell
-            case .addtional:
-                let cell = tableView.dequeueReusableCell(withClass: MovieAdditionalCell.self, for: indexPath)
-                cell.movie = self.viewModel.movie
-                return cell
-            }
-        }.disposed(by: bag)
+//        dataRelay.bind(to: tableView.rx.items) { (tableView, row, type) -> UITableViewCell in
+//            let indexPath = IndexPath(row: row, section: 0)
+//            switch type {
+//            case .movie:
+//                let cell = tableView.dequeueReusableCell(withClass: MovieCell.self, for: indexPath)
+//                cell.movie = self.viewModel.movie
+//                return cell
+//            case .addtional:
+//                let cell = tableView.dequeueReusableCell(withClass: MovieAdditionalCell.self, for: indexPath)
+//                
+//                return cell
+//            }
+//        }.disposed(by: bag)
 
     }
 

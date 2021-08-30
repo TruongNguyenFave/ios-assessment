@@ -7,25 +7,18 @@
 
 import UIKit
 
-class MovieAdditionalCell: UITableViewCell {
+class MovieAdditionalCell: BaseTableViewCell<MovieAdditionalCellViewModel> {
 
     @IBOutlet fileprivate weak var genresLabel: UILabel!
     @IBOutlet fileprivate weak var languageLabel: UILabel!
     @IBOutlet fileprivate weak var durationLabel: UILabel!
     @IBOutlet fileprivate weak var synopsisLabel: UILabel!
 
-    var movie: Movie? {
-        didSet {
-            guard let movie = self.movie else { return }
-            genresLabel.text = movie.genresDisplay
-            languageLabel.text = movie.movieLanguage
-            synopsisLabel.text = movie.overview
-            durationLabel.text = movie.durationDisplay
-        }
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override func bind() {
+        guard let movie = self.viewModel.movie else { return }
+        genresLabel.text = movie.genresDisplay
+        languageLabel.text = movie.movieLanguage
+        synopsisLabel.text = movie.overview
+        durationLabel.text = movie.durationDisplay
     }
 }

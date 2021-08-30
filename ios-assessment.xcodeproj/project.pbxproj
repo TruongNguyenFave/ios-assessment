@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65109C32266E21AB00E8D86A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65109C31266E21AB00E8D86A /* TableViewCell.swift */; };
+		65109C37266E21F200E8D86A /* HasDisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65109C36266E21F200E8D86A /* HasDisposeBag.swift */; };
+		65109C3D266E22DB00E8D86A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65109C3C266E22DB00E8D86A /* BaseTableViewCell.swift */; };
+		65109C41266E231100E8D86A /* BaseTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65109C40266E231100E8D86A /* BaseTableViewCellViewModel.swift */; };
+		65109C45266E23FC00E8D86A /* MovieAdditionalCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65109C44266E23FC00E8D86A /* MovieAdditionalCellViewModel.swift */; };
 		6524CEC9266DB2E400ED9A18 /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524CEC8266DB2E400ED9A18 /* HomeViewControllerTest.swift */; };
 		6524CED9266DC0B700ED9A18 /* DetailsCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524CED8266DC0B700ED9A18 /* DetailsCoordinatorMock.swift */; };
 		6524CEE0266DC37100ED9A18 /* BindableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6524CEDF266DC37100ED9A18 /* BindableTest.swift */; };
@@ -85,6 +90,11 @@
 /* Begin PBXFileReference section */
 		34A4DCA9E784793CB190327B /* Pods-ios-assessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-assessment.debug.xcconfig"; path = "Target Support Files/Pods-ios-assessment/Pods-ios-assessment.debug.xcconfig"; sourceTree = "<group>"; };
 		3A8CCFCB61F9FA364FDB5B9B /* Pods-ios-assessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-assessment.release.xcconfig"; path = "Target Support Files/Pods-ios-assessment/Pods-ios-assessment.release.xcconfig"; sourceTree = "<group>"; };
+		65109C31266E21AB00E8D86A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		65109C36266E21F200E8D86A /* HasDisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDisposeBag.swift; sourceTree = "<group>"; };
+		65109C3C266E22DB00E8D86A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		65109C40266E231100E8D86A /* BaseTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		65109C44266E23FC00E8D86A /* MovieAdditionalCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAdditionalCellViewModel.swift; sourceTree = "<group>"; };
 		6524CEC8266DB2E400ED9A18 /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
 		6524CED8266DC0B700ED9A18 /* DetailsCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCoordinatorMock.swift; sourceTree = "<group>"; };
 		6524CEDF266DC37100ED9A18 /* BindableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableTest.swift; sourceTree = "<group>"; };
@@ -182,6 +192,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		65109C35266E21DD00E8D86A /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				65109C36266E21F200E8D86A /* HasDisposeBag.swift */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
+		65109C3A266E22B500E8D86A /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				65109C3B266E22BE00E8D86A /* Lucid */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		65109C3B266E22BE00E8D86A /* Lucid */ = {
+			isa = PBXGroup;
+			children = (
+				65109C3C266E22DB00E8D86A /* BaseTableViewCell.swift */,
+				65109C40266E231100E8D86A /* BaseTableViewCellViewModel.swift */,
+			);
+			path = Lucid;
+			sourceTree = "<group>";
+		};
 		6524CED7266DC09D00ED9A18 /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +303,7 @@
 			children = (
 				655D8E532669C4E300170884 /* MovieAdditionalCell.swift */,
 				655D8E542669C4E300170884 /* MovieAdditionalCell.xib */,
+				65109C44266E23FC00E8D86A /* MovieAdditionalCellViewModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -275,6 +311,8 @@
 		655D8E622669D7B100170884 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				65109C3A266E22B500E8D86A /* BaseClass */,
+				65109C35266E21DD00E8D86A /* Type */,
 				655D8E632669D7BE00170884 /* Dropdown */,
 			);
 			path = Commons;
@@ -328,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				655D8EEA266A1E6600170884 /* BaseViewController.swift */,
+				65109C31266E21AB00E8D86A /* TableViewCell.swift */,
 			);
 			path = AppBase;
 			sourceTree = "<group>";
@@ -660,12 +699,16 @@
 				655D8EEB266A1E6600170884 /* BaseViewController.swift in Sources */,
 				6536DA462668CBBC00A8B5F9 /* API_Movie.swift in Sources */,
 				655D8EAD266A09F100170884 /* AppDefines.swift in Sources */,
+				65109C3D266E22DB00E8D86A /* BaseTableViewCell.swift in Sources */,
 				6536DA3C2668C86E00A8B5F9 /* APIResponseError.swift in Sources */,
+				65109C41266E231100E8D86A /* BaseTableViewCellViewModel.swift in Sources */,
 				6599ACCC26678F9900382DF7 /* Coordinator.swift in Sources */,
 				6599ACD32667901D00382DF7 /* Bindable.swift in Sources */,
 				6524CF0D266DCD1A00ED9A18 /* DetailsCoordinatorType.swift in Sources */,
 				6536DA322668C80D00A8B5F9 /* APIService.swift in Sources */,
+				65109C32266E21AB00E8D86A /* TableViewCell.swift in Sources */,
 				6536DA0226687D4C00A8B5F9 /* NSObject+Extensions.swift in Sources */,
+				65109C37266E21F200E8D86A /* HasDisposeBag.swift in Sources */,
 				655D8E6B2669D7BE00170884 /* DropdownCell.swift in Sources */,
 				6599ACB126678C9100382DF7 /* ViewController.swift in Sources */,
 				6524CF01266DCCB200ED9A18 /* HomeViewModelType.swift in Sources */,
@@ -676,6 +719,7 @@
 				6536DA432668C9AB00A8B5F9 /* APIHeaders.swift in Sources */,
 				6536DA192668877B00A8B5F9 /* MovieCell.swift in Sources */,
 				655D8E5F2669D5B300170884 /* UIView+Extensions.swift in Sources */,
+				65109C45266E23FC00E8D86A /* MovieAdditionalCellViewModel.swift in Sources */,
 				6536DA352668C81B00A8B5F9 /* APIBaseInput.swift in Sources */,
 				655D8E6C2669D7BE00170884 /* DropdownView.swift in Sources */,
 				6536DA082668822800A8B5F9 /* HomeCoordinator.swift in Sources */,
